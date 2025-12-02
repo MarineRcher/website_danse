@@ -1,0 +1,24 @@
+{% load static %}
+<header>
+	<div class="mx-container">
+	<a class="navbar-brand" href="{% url 'website:home' %}" title="Accueil">
+        <img src='{% static "website/photos/logo_noir.png" %}' />
+    </a>
+	<nav>
+		<ul>
+			<li>
+				<a class="navbar-link {% if request.resolver_match.url_name == 'home' %} active-link {% endif %}" href="#">ACCUEIL</a>
+			</li>
+			<li>
+				<a class="navbar-link" href="#">DANSER</a>
+			</li>
+			<li>
+				<a class="navbar-link" href="#">VOS PROJETS</a>
+			</li>
+			<li>
+				{% include "website/components/primary_button.html" with content="Me Contacter" %}
+			</li>
+		</ul>
+	</nav>
+	</div>
+</header>

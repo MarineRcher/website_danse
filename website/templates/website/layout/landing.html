@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>
+            {% block head_title %}
+			Accueil
+            {% endblock head_title %}
+        </title>
+		 <meta name="description" content="{% block head_description %}Accueil{% endblock head_description %}"></meta>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- OG TAGS -->
+        <meta property="og:url" content="https://ChristianeMataix.fr">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Christiane Mataix">
+        <meta property="og:description" content="Christiane Mataix">
+        <meta property="og:image" content="https://ChristianeMataix/og.png">
+
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="website/photos/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="website/photos/favicon.svg" />
+        <link rel="shortcut icon" href="website/photos/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="Christiane Mataix" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+		<link rel="stylesheet" href="{% static 'website/css/fonts.css' %}">
+		<link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/theme.css' %}">
+        <link rel="stylesheet" href="{% static 'website/css/mixins.css' %}">
+        <link rel="stylesheet" href="{% static 'website/components/header.css' %}">
+        <link rel="stylesheet" href="{% static 'website/components/footer.css' %}">
+        <link rel="stylesheet" href="{% static 'website/components/primary_button.css' %}">
+
+        {% block extra_head_tags %}
+        {% endblock extra_head_tags %}
+    </head>
+    <body>
+        <main class="content">
+            {% include "website/components/header.html" %}
+            {% block body %}{% endblock body %}
+            {% include "website/components/footer.html" %}
+        </main>
+    </body>
+</html>

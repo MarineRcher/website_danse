@@ -1,0 +1,37 @@
+{% load static %}
+
+<footer>
+	<div class="mx-container footer">
+		<img src="{% static 'website/photos/logo.png' %}" alt="Logo Christiane Mataix" />
+
+		<nav class="footer-nav" aria-label="Navigation du pied de page">
+			<div class="col">
+				<h3>Qui suis-je ?</h3>
+				<ul>
+					<li><a class="footer-link" href="#">Christiane Mataix</a></li>
+					<li><a class="footer-link" href="#">Me contacter</a></li>
+				</ul>
+			</div>
+
+			<div class="col">
+				<h3>Cours</h3>
+				<ul>
+					<li><a class="footer-link" href="#">Ados & Adultes</a></li>
+					<li><a class="footer-link" href="#">Enfants</a></li>
+				</ul>
+			</div>
+
+			<div class="col">
+				<h3>Naviguer</h3>
+				<ul>
+					<li><a class="footer-link {% if request.resolver_match.url_name == 'home' %}active-link{% endif %}" href="#">Accueil</a></li>
+					<li><a class="footer-link" href="#">Danser</a></li>
+					<li><a class="footer-link" href="#">Vos projets</a></li>
+					<li><a class="footer-link" href="#">Me contacter</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+
+	<p>&copy; 2025 - Christiane Mataix - Tous droits réservés</p>
+</footer>
