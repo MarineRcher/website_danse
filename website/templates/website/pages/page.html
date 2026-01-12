@@ -1,11 +1,16 @@
 {% extends 'website/layout/landing.html' %}
 {% load static %}
 {% block head_title %}Accueil{% endblock %}
-{% block head_description %}cc{% endblock %}
+{% block head_description %}cc{% endblock %}`
 
+        {% block extra_head_tags %}
+     <link rel="stylesheet" href="{% static 'website/pages/sections/hero.css' %}">
+     <link rel="stylesheet" href="{% static 'website/pages/sections/present.css' %}">
+        {% endblock extra_head_tags %}
 
 {% block body %}
 <div class="mx-container">
-<h1>« La danse est dans le monde la plus belle métaphore de l'existence. » <br />Erick Hawkins</h1>
+	{% include "website/pages/sections/hero.html" %}
+	{% include "website/pages/sections/present.html" %}
 </div>
 {% endblock %}

@@ -14,7 +14,6 @@ h2 {
 
 h3 {
     font-size: 24px;
-    font-weight: 400;
 }
 
 em {
@@ -28,8 +27,6 @@ a,
 strong {
     font-size: 16px;
     font-family: var(--body-font-family);
-    margin-top: 6px;
-    margin-bottom: 6px;
 }
 
 strong {

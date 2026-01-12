@@ -1,0 +1,11 @@
+{% load static %}
+
+<div class="hero">
+	<img src="{% static "website/photos/hero.png" %}" />
+	<h1>"La danse est dans le monde la plus belle métaphore de l'existence." <br />Erick Hawkins</h1>
+	<p>La danse contemporaine avec Christiane Mataix</p>
+	<div class="btns">
+		{% include "website/components/primary_button.html" with content="Me Contacter" %}
+		{% include "website/components/secondary_button.html" with content="Voir les cours" %}
+	</div>
+</div>
