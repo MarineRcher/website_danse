@@ -1,6 +1,8 @@
 .present {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
+    padding: 128px 0;
 }
 
 .present-box-1,
@@ -11,12 +13,25 @@
 }
 
 .present-box-1 img {
-    width: 574;
+    width: 570px;
+}
+
+.present-box-1 p {
+    padding-top: 128px;
 }
 .present-box-2 {
-    height: 100%;
-    border-right: var(--secondary-100) 1px solid;
+    border-right: var(--secondary-100) 0.5px solid;
+    margin: 0px 16px;
 }
 .subtitle {
     color: #595959;
+}
+
+.present-box-3 img {
+    width: 216px;
+    padding-top: 64px;
+}
+
+.present strong {
+    color: var(--secondary-100);
 }

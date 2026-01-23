@@ -1,0 +1,6 @@
+.reviews {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 34px;
+}

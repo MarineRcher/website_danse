@@ -1,0 +1,20 @@
+{% extends 'website/layout/landing.html' %}
+{% load static %}
+{% block head_title %}Danser{% endblock %}
+{% block head_description %}cc{% endblock %}`
+
+        {% block extra_head_tags %}
+     <link rel="stylesheet" href="{% static 'website/pages/danser/sections/courses.css' %}">
+     <link rel="stylesheet" href="{% static 'website/pages/danser/sections/reviews_courses.css' %}">
+     <link rel="stylesheet" href="{% static 'website/pages/components/review.css' %}">
+        {% endblock extra_head_tags %}
+
+{% block body %}
+<div class="mx-container">
+        <h1>Danse Contemporaine</h1>
+        <h2>Technique - Chorégraphie - Improvisation dirigée – Composition</h2>
+        <p>L'enseignement favorise la conscience corporelle dans les mises en jeu du corps, la technique est enseignée de façon à concilier souplesse articulaire et puissance, fluidité et précision. Faire l'expérience d'infinies possibilités du corps en mouvement, s'élancer en toute confiance, projeter sa danse.</p>
+	{% include "website/pages/danser/sections/courses.html" %}
+	{% include "website/pages/danser/sections/reviews_courses.html" %}
+</div>
+{% endblock %}

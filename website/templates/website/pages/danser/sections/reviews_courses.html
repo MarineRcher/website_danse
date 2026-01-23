@@ -1,0 +1,12 @@
+{% load static %}
+
+<div class="reviews-courses">
+	<h2>Ce qu’ils disent de nos cours...</h2>
+	<div class="reviews">
+		{% include "website/pages/components/review.html" with color="blue" quote="Merci Christiane pour cette année<br /> exceptionnelle de découverte<br /> de la danse." person="David G." %}
+		{% include "website/pages/components/review.html" with color="orange" quote="Merci pour tout ! Je me suis <br />vraiment épanouie dans ton <br />cours. Tu es unique." person="Sophie G." %}
+		{% include "website/pages/components/review.html" with color="red" quote="Un grand merci pour tes cours si vivants, ton <br />accompagnement, ta créativité et tes ondes positives.<br /> A toutes et tous, merci pour cette belle ambiance <br />tout au long de l'année." person="Martine C." %}
+		{% include "website/pages/components/review.html" with color="blue" quote="Immense merci Christiane <br />pour ces magnifiques cours <br />de danse que vous offrez à <br />nos filles." person="Camille D." %}
+		{% include "website/pages/components/review.html" with color="orange" quote="Un grand merci pour ce beau moment.<br /> Une belle évolution de nos filles grâce à toi. Je<br /> prend beaucoup de plaisir à venir à ton cours." person="Véronique R." %}
+	</div>
+</div>

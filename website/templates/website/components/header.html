@@ -7,10 +7,10 @@
 	<nav>
 		<ul>
 			<li>
-				<a class="navbar-link {% if request.resolver_match.url_name == 'home' %} active-link {% endif %}" href="#">ACCUEIL</a>
+				<a class="navbar-link {% if request.resolver_match.url_name == 'home' %} active-link {% endif %}" href="{% url 'website:home' %}">ACCUEIL</a>
 			</li>
 			<li>
-				<a class="navbar-link" href="#">DANSER</a>
+				<a class="navbar-link {% if request.resolver_match.url_name == 'dance' %} active-link {% endif %}" href="{% url 'website:dance' %}">DANSER</a>
 			</li>
 			<li>
 				<a class="navbar-link" href="#">VOS PROJETS</a>

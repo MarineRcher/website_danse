@@ -10,6 +10,7 @@ h1 {
 
 h2 {
     font-size: 32px;
+    font-weight: 400;
 }
 
 h3 {
@@ -20,7 +21,7 @@ h3 {
 em {
     font-family: var(--quote-font-family);
     font-style: italic;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 p,
@@ -30,10 +31,6 @@ strong {
     font-family: var(--body-font-family);
     margin-top: 6px;
     margin-bottom: 6px;
-}
-
-strong {
-    color: var(--secondary-100);
 }
 
 strong,

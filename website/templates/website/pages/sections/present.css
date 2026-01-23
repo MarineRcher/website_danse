@@ -31,3 +31,7 @@
     width: 216px;
     padding-top: 64px;
 }
+
+.present strong {
+    color: var(--secondary-100);
+}

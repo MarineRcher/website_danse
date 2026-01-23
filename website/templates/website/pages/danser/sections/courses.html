@@ -1,0 +1,109 @@
+{% load static %}
+
+<div class="tabs">
+
+    <input type="radio" name="tabs" id="tab1" checked>
+    <input type="radio" name="tabs" id="tab2">
+
+    <div class="tabs-select">
+        <label for="tab1">
+            <h2>Enfants & Ados</h2>
+        </label>
+        <label for="tab2">
+            <h2>Ados & Adultes</h2>
+        </label>
+    </div>
+	<div class="content">
+		<div class="tab-content tab1">
+			<em>Les jeunes élèves nourrissent leur passion de la danse, ils se découvrent et grandissent en apprenant.</em>
+			<div class="courses-present">
+				<img src="{% static 'website/photos/enfants.png' %}" />
+				<div class="courses-details">
+					<div class="courses-details-title">
+						<strong>Lieu</strong>
+						<div class="line"></div>
+					</div>
+					<p>Terre de Lumière, 10 rue Sainte Catherine 69001 Lyon</p>
+					<div class="courses-details-title">
+						<strong>Période</strong>
+						<div class="line"></div>
+					</div>
+					<p>Du 10 septembre 2025 au 1 juillet 2026</p>
+					<div class="courses-details-title">
+						<strong>Horaires</strong>
+						<div class="line"></div>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Enfant CE1/CE2</p>
+						<p>Mercredi 10h - 11h</p>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Enfant CM1/CM2</p>
+						<p>Mercredi 11h15 - 12h30</p>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Ado 6ème/5ème/4ème</p>
+						<p>Mercredi 14h15 - 15h30</p>
+					</div>
+					<div class="courses-details-title">
+						<strong>TARIFS pour l'année de danse</strong>
+						<div class="line"></div>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Cours d'1h / semaine</p>
+						<p>375 €</p>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Cours d'1h 15mn / semaine</p>
+						<p>390 €</p>
+					</div>
+				</div>
+			</div>
+			<p>Cours d'essai offert toute l'année scolaire</p>
+		</div>
+		<div class="tab-content tab2">
+			<em>Libérer son potentiel, progresser et se faire plaisir.</em>
+			<div class="courses-present">
+				<img src="{% static 'website/photos/ado&adultes.png' %}" />
+				<div class="courses-details">
+					<div class="courses-details-title">
+						<strong>Lieu</strong>
+						<div class="line"></div>
+					</div>
+					<p>Gym Autrement, 3 Place du Griffon 69001 Lyon</p>
+					<div class="courses-details-title">
+						<strong>Période</strong>
+						<div class="line"></div>
+					</div>
+					<p>Du 12 septembre 2025 au 3 juillet 2026</p>
+					<div class="courses-details-title">
+						<strong>Horaires</strong>
+						<div class="line"></div>
+					</div>
+					<p>Vendredi 18h - 19h30</p>
+					<div class="courses-details-title">
+						<strong>TARIFS pour l'année de danse</strong>
+						<div class="line"></div>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Ado et Étudiant</p>
+						<p>460 € soit 4 x 115 €</p>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Adulte</p>
+						<p>500 € soit 4 x 125 €</p>
+					</div>
+					<div class="courses-details-tarifs">
+						<p>Cours d'essai</p>
+						<p>15 € remboursé après l'inscription</p>
+					</div>
+				</div>
+			</div>
+			<p>Possibilité d'inscription à la carte et d'essayer les cours à tout moment de l'année scolaire.</p>
+		</div>
+	</div>
+</div>
+<div class="contact">
+	<h3>Réservez un cours d'essai !</h3>
+	{% include "website/components/primary_button.html" with content="Me Contacter" %}
+</div>
