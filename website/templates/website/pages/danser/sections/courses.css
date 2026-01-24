@@ -116,6 +116,10 @@
     .subtitle-danser {
         font-size: 28px;
     }
+    .subsubtitle-danser {
+        font-size: 22px;
+        margin: 0;
+    }
 
     .tabs-select {
         flex-direction: column;

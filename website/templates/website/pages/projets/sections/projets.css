@@ -11,3 +11,9 @@
 .projects img {
     width: 500px;
 }
+
+@media (max-width: 768px) {
+    .projects img {
+        width: 300px;
+    }
+}

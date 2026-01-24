@@ -8,11 +8,12 @@
      <link rel="stylesheet" href="{% static 'website/pages/projets/sections/reviews_projets.css' %}">
      <link rel="stylesheet" href="{% static 'website/pages/projets/components/projet.css' %}">
      <link rel="stylesheet" href="{% static 'website/pages/components/review.css' %}">
+     <link rel="stylesheet" href="{% static 'website/pages/danser/sections/courses.css' %}">
         {% endblock extra_head_tags %}
 
 {% block body %}
 <div class="mx-container">
-        <h1>Vos projets</h1>
+        <h1 class="title-danser">Vos projets</h1>
 	{% include "website/pages/projets/sections/projets.html" %}
 	{% include "website/pages/projets/sections/reviews_projets.html" %}
 </div>
