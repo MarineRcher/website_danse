@@ -94,7 +94,9 @@
     flex-direction: row;
     justify-content: space-between;
 }
-
+.title-danser {
+    padding-top: 64px;
+}
 .contact {
     display: flex;
     align-items: center;
@@ -110,7 +112,6 @@
     }
     .title-danser {
         font-size: 36px;
-        padding-top: 64px;
     }
 
     .subtitle-danser {
