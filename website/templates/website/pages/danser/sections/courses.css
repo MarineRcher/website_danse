@@ -102,3 +102,89 @@
     gap: 16px;
     padding: 32px 0;
 }
+@media (max-width: 768px) {
+    /* Onglets */
+    .tabs {
+        padding: 24px 16px;
+        gap: 24px;
+    }
+    .title-danser {
+        font-size: 36px;
+        padding-top: 64px;
+    }
+
+    .subtitle-danser {
+        font-size: 28px;
+    }
+
+    .tabs-select {
+        flex-direction: column;
+        width: 88%;
+        gap: 8px;
+    }
+
+    .tabs-select h2 {
+        text-align: center;
+        width: 80%;
+        font-size: 1.1rem;
+    }
+
+    /* Contenu onglet */
+    .tab-content {
+        padding: 0;
+        width: 100%;
+    }
+
+    #tab1:checked ~ .content .tab1,
+    #tab2:checked ~ .content .tab2 {
+        gap: 24px;
+    }
+
+    /* Présentation cours */
+    .courses-present {
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .courses-present img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    /* Détails */
+    .courses-details {
+        min-width: 88%;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .courses-details-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .line {
+        width: 48px;
+    }
+
+    .courses-details-tarifs {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Texte final */
+    .tab-content > p {
+        text-align: center;
+        font-size: 0.95rem;
+        padding: 0 8px;
+    }
+
+    /* Bloc contact */
+    .contact {
+        padding: 24px 16px;
+        text-align: center;
+    }
+}

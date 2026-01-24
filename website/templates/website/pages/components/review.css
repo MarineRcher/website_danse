@@ -39,3 +39,9 @@
 .review.orange {
     color: var(--secondary-100);
 }
+
+@media (max-width: 768px) {
+    .review {
+        height: 270px;
+    }
+}
