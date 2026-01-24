@@ -35,3 +35,44 @@
 .present strong {
     color: var(--secondary-100);
 }
+@media (max-width: 768px) {
+    .present {
+        flex-direction: column;
+        padding: 64px 16px;
+        gap: 48px;
+    }
+
+    /* Ordre des blocs */
+    .present-box-3 {
+        order: 1;
+        align-items: center;
+        text-align: center;
+    }
+
+    .present-box-1 {
+        order: 2;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* On supprime la ligne */
+    .present-box-2 {
+        display: none;
+    }
+
+    /* Images responsive */
+    .present-box-1 img {
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .present-box-3 img {
+        width: 160px;
+        padding-top: 32px;
+    }
+
+    /* Espacements texte */
+    .present-box-1 p {
+        padding-top: 32px;
+    }
+}

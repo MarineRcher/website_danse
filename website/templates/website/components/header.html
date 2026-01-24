@@ -5,6 +5,11 @@
 	<a class="navbar-brand" href="{% url 'website:home' %}" title="Accueil">
         <img src='{% static "website/photos/logo_noir.png" %}' />
     </a>
+	<button class="burger" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 	<nav>
 		<ul>
 			<li>
@@ -23,3 +28,15 @@
 	</nav>
 	</div>
 </header>
+<script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('nav');
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('open');
+        document.body.classList.toggle('no-scroll');
+
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        burger.setAttribute('aria-expanded', !expanded);
+    });
+</script>

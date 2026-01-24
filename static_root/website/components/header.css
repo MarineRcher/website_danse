@@ -8,6 +8,10 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.navbar-brand img {
+    width: 140px;
+}
+
 header div {
     display: flex;
     flex-direction: row;
@@ -33,4 +37,48 @@ nav ul {
 
 main.content {
     padding-top: 100px;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 24px;
+    height: 2px;
+    background-color: black;
+    transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+        padding-right: 32px;
+    }
+
+    header nav {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: var(--background-100);
+        display: none;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+    }
+
+    header nav.open {
+        display: block;
+    }
+    .no-scroll {
+        overflow: hidden;
+    }
 }
