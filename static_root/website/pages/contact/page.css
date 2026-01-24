@@ -1,0 +1,43 @@
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact img {
+    width: 425px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 -15px 20px -10px rgba(0, 0, 0, 0.15) inset;
+}
+
+form button {
+    background-color: var(--secondary-100);
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+}
+
+input,
+textarea {
+    background-color: var(--background-100);
+    border-radius: 6px;
+    border: 1px solid #595959;
+}
+
+.contact-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contact-name-col {
+    display: flex;
+    flex-direction: column;
+}

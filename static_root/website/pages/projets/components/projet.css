@@ -1,4 +1,4 @@
-.review {
+.projet {
     background-color: white;
     border-radius: 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
@@ -10,32 +10,30 @@
     gap: 8px;
 }
 
-.review em {
-    font-size: 16px;
-}
-.review img {
-    width: 32px;
-    align-self: center;
+.line-projet {
+    width: 80%;
+    height: 2px;
+    background-color: currentColor;
 }
 
-.review .quote {
+.projet p {
+    font-size: 16px;
+}
+
+.projet .quote {
     text-align: justify;
     margin: 16px 0;
     flex-grow: 1;
 }
 
-.review .person {
-    align-self: flex-end;
-}
-
-.review.blue {
+.projet.blue {
     color: var(--primary-100);
 }
 
-.review.red {
+.projet.red {
     color: var(--interact-100);
 }
 
-.review.orange {
+.projet.orange {
     color: var(--secondary-100);
 }

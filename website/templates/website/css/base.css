@@ -26,7 +26,10 @@ em {
 
 p,
 a,
-strong {
+strong,
+label,
+input,
+textarea {
     font-size: 16px;
     font-family: var(--body-font-family);
     margin-top: 6px;

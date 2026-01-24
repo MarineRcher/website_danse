@@ -1,0 +1,16 @@
+{% load static %}
+<div class="reviews-projects">
+	<h2>Des réalisations qui ont fait faire des pas de côté</h2>
+	<div class="reviews">
+	{% include "website/pages/projets/components/projet.html" with color="blue" name="GROUPE CLASQUIN" quote="Pour le Comité Exécutif <br />Commande d'une chorégraphie <br />Michaeljacksonienne"%}
+	{% include "website/pages/projets/components/projet.html" with color="orange" name="ECLATS D'ART/<br />Ferme du Vinatier/ <br />« Culture et santé »" quote="Ateliers « Danse ton quartier » - <br />public d'adolescents" %}
+	{% include "website/pages/projets/components/projet.html" with color="red" name="ENFANCE ART ET LANGAGE" quote="Ville de Lyon <br />Ateliers d’éveil corporel en <br />crèche - thème « les 4 saisons»" %}
+	{% include "website/pages/projets/components/projet.html" with color="blue" name="GROUPE SCOLAIRE JOANNY COLLOMB" quote="Genas <br/>Ateliers de pratique artistique <br/>danse pour classes maternelles <br/>et élémentaires." %}
+</div>
+	<h2>Ce qu’ils disent de nos projets...</h2>
+	<div class="reviews">
+	{% include "website/pages/components/review.html" with color="blue" quote="“En souvenir d'une collaboration <br />qui nous aura amené à nous <br />décaler, nous déplacer, nous<br /> mélanger”" person="Marion D." %}
+	{% include "website/pages/components/review.html" with color="orange" quote="“Quand je vois le résultat obtenu <br />avec les enfants, je suis <br />émerveillée et ils adorent!”" person="Valérie M." %}
+	{% include "website/pages/components/review.html" with color="red" quote="“J'ai redécouvert des enfants sous un autre jour grâce à la <br />danse. Je me rends compte que tout apprentissage passe <br />par le corps, l'enfant doit avoir vécu pour comprendre <br />et construire”" person="Karine D." %}
+	</div>
+</div>

@@ -1,4 +1,5 @@
 {% load static %}
+
 <header>
 	<div class="mx-container">
 	<a class="navbar-brand" href="{% url 'website:home' %}" title="Accueil">
@@ -13,10 +14,10 @@
 				<a class="navbar-link {% if request.resolver_match.url_name == 'dance' %} active-link {% endif %}" href="{% url 'website:dance' %}">DANSER</a>
 			</li>
 			<li>
-				<a class="navbar-link" href="#">VOS PROJETS</a>
+				<a class="navbar-link {% if request.resolver_match.url_name == 'project' %} active-link {% endif %}" href="{% url 'website:project' %}">VOS PROJETS</a>
 			</li>
 			<li>
-				{% include "website/components/primary_button.html" with content="Me Contacter" %}
+				{% include "website/components/primary_button.html" with content="Me contacter" %}
 			</li>
 		</ul>
 	</nav>
