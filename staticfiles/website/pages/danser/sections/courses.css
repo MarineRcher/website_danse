@@ -1,0 +1,195 @@
+.tabs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 0;
+}
+
+.tabs input {
+    display: none;
+}
+.tabs-select {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.tabs-select label {
+    display: block;
+    cursor: pointer;
+}
+
+.tabs-select h2 {
+    padding: 10px 20px;
+    margin: 0;
+    color: var(--secondary-100);
+    border: 1px solid var(--secondary-100);
+    background-color: white;
+}
+
+.tabs-select label:hover h2 {
+    background: var(--background-100);
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+
+/* Contenu actif */
+#tab1:checked ~ .content .tab1,
+#tab2:checked ~ .content .tab2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Onglet actif */
+.tabs:has(#tab1:checked) label[for="tab1"] h2,
+.tabs:has(#tab2:checked) label[for="tab2"] h2 {
+    background-color: var(--secondary-100);
+    color: white;
+}
+
+.courses-present {
+    display: flex;
+    flex-direction: row;
+    gap: 64px;
+}
+
+.courses-present img {
+    width: 578px;
+}
+
+.courses-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    gap: 8px;
+    padding: 16px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.courses-details-title {
+    color: #595959;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    border-bottom: #595959 2px solid;
+}
+
+.courses-details-tarifs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.title-danser {
+    padding-top: 64px;
+}
+.contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 0;
+}
+@media (max-width: 768px) {
+    /* Onglets */
+    .tabs {
+        padding: 24px 16px;
+        gap: 24px;
+    }
+    .title-danser {
+        font-size: 36px;
+    }
+
+    .subtitle-danser {
+        font-size: 28px;
+    }
+    .subsubtitle-danser {
+        font-size: 22px;
+        margin: 0;
+    }
+
+    .tabs-select {
+        flex-direction: column;
+        width: 88%;
+        gap: 8px;
+    }
+
+    .tabs-select h2 {
+        text-align: center;
+        width: 80%;
+        font-size: 1.1rem;
+    }
+
+    /* Contenu onglet */
+    .tab-content {
+        padding: 0;
+        width: 100%;
+    }
+
+    #tab1:checked ~ .content .tab1,
+    #tab2:checked ~ .content .tab2 {
+        gap: 24px;
+    }
+
+    /* Présentation cours */
+    .courses-present {
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+    }
+
+    .courses-present img {
+        width: 100%;
+        border-radius: 6px;
+    }
+
+    /* Détails */
+    .courses-details {
+        min-width: 88%;
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .courses-details-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .line {
+        width: 48px;
+    }
+
+    .courses-details-tarifs {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    /* Texte final */
+    .tab-content > p {
+        text-align: center;
+        font-size: 0.95rem;
+        padding: 0 8px;
+    }
+
+    /* Bloc contact */
+    .contact {
+        padding: 24px 16px;
+        text-align: center;
+    }
+}

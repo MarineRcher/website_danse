@@ -1,0 +1,39 @@
+.projet {
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    align-items: stretch;
+    height: 200px;
+    gap: 8px;
+}
+
+.line-projet {
+    width: 80%;
+    height: 2px;
+    background-color: currentColor;
+}
+
+.projet p {
+    font-size: 16px;
+}
+
+.projet .quote {
+    text-align: justify;
+    margin: 16px 0;
+    flex-grow: 1;
+}
+
+.projet.blue {
+    color: var(--primary-100);
+}
+
+.projet.red {
+    color: var(--interact-100);
+}
+
+.projet.orange {
+    color: var(--secondary-100);
+}

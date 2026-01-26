@@ -1,0 +1,11 @@
+.secondary-button {
+    background-color: var(--background-100);
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.secondary-button p {
+    color: var(--primary-100);
+}
