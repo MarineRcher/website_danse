@@ -5,7 +5,6 @@
     <head>
         <title>
             {% block head_title %}
-			Accueil
             {% endblock head_title %}
         </title>
 		 <meta name="description" content="{% block head_description %}Accueil{% endblock head_description %}"></meta>
@@ -13,19 +12,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- OG TAGS -->
-        <meta property="og:url" content="https://ChristianeMataix.fr">
+        <meta property="og:url" content="https://website-danse.onrender.com/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Christiane Mataix">
-        <meta property="og:description" content="Christiane Mataix">
-        <meta property="og:image" content="https://ChristianeMataix/og.png">
+        <meta property="og:title" content="Christiane Mataix Danse">
+        <meta property="og:description" content="Christiane Mataix Danse">
 
         <!-- favicon -->
-        <link rel="icon" type="image/png" href="website/photos/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="website/photos/favicon.svg" />
-        <link rel="shortcut icon" href="website/photos/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Christiane Mataix" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" type="image/png" href="{% static 'website/photos/favicon-96x96.png' %}" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="{% static 'website/photos/favicon.svg' %}" />
+        <link rel="shortcut icon" href="{% static 'website/photos/favicon.ico' %}" />
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'website/photos/apple-touch-icon.png' %}" />
+        <meta name="Christiane Mataix Danse" content="Christiane Mataix Danse" />
+        <link rel="manifest" href="{% static 'website/photos/site.webmanifest' %}" />
 
 		<link rel="stylesheet" href="{% static 'website/css/fonts.css' %}">
 		<link rel="stylesheet" href="{% static 'website/css/base.css' %}">

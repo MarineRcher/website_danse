@@ -27,7 +27,7 @@
 					<li><a class="footer-link {% if request.resolver_match.url_name == 'home' %}active-link{% endif %}" href="{% url 'website:home' %}">Accueil</a></li>
 					<li><a class="footer-link {% if request.resolver_match.url_name == 'dance' %}active-link{% endif %}" href="{% url 'website:dance' %}">Danser</a></li>
 					<li><a class="footer-link {% if request.resolver_match.url_name == 'project' %}active-link{% endif %}" href="{% url 'website:project' %}">Vos projets</a></li>
-					<li><a class="footer-link {% if request.resolver_match.url_name == 'home' %}active-link{% endif %}" href="{% url 'website:home' %}">Me contacter</a></li>
+					<li><a class="footer-link {% if request.resolver_match.url_name == 'contact' %}active-link{% endif %}" href="{% url 'website:contact' %}">Me contacter</a></li>
 				</ul>
 			</div>
 		</nav>
