@@ -1,13 +1,57 @@
 version: "3.9"
 
 services:
+    traefik:
+        image: traefik:v2.10
+        container_name: traefik
+        restart: unless-stopped
+        command:
+            # Mode de configuration
+            - "--providers.docker=true"
+            - "--providers.docker.exposedbydefault=false"
+            # Points d'entrée
+            - "--entrypoints.web.address=:80"
+            - "--entrypoints.websecure.address=:443"
+            # Let's Encrypt pour SSL automatique
+            - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
+            - "--certificatesresolvers.letsencrypt.acme.email=christianemataix@gmail.com"
+            - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
+            # Redirection HTTP vers HTTPS
+            - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
+            - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - ./letsencrypt:/letsencrypt
+        networks:
+            - web
+
     web:
         build: .
         container_name: django_web
-        ports:
-            - "8000:8000"
+        restart: unless-stopped
         env_file:
             - .env
         volumes:
             - .:/app
         command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+        labels:
+            # Activer Traefik pour ce service
+            - "traefik.enable=true"
+            # Définir le nom de domaine (À MODIFIER)
+            - "traefik.http.routers.django.rule=Host(`christianemataixdanse.fr`) || Host(`www.christianemataixdanse.fr`)"
+            # Utiliser HTTPS
+            - "traefik.http.routers.django.entrypoints=websecure"
+            - "traefik.http.routers.django.tls.certresolver=letsencrypt"
+            # Port du service
+            - "traefik.http.services.django.loadbalancer.server.port=8000"
+        networks:
+            - web
+        depends_on:
+            - traefik
+
+networks:
+    web:
+        driver: bridge

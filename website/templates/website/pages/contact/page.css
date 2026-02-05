@@ -13,7 +13,10 @@
     height: 542px;
     padding-right: 64px;
 }
-
+.contact-img {
+    display: flex;
+    flex-direction: column;
+}
 form {
     display: flex;
     flex-direction: column;
