@@ -64,7 +64,7 @@ services:
             - "traefik.enable=true"
 
             # Domaine
-            - "traefik.http.routers.django.rule=Host(`tondomaine.fr`) || Host(`www.tondomaine.fr`)"
+            - "traefik.http.routers.django.rule=Host(`christianemataixdanse.fr`) || Host(`www.christianemataixdanse.fr`)"
             - "traefik.http.routers.django.entrypoints=websecure"
             - "traefik.http.routers.django.tls.certresolver=letsencrypt"
 
