@@ -59,7 +59,7 @@ input {
 }
 
 @media (max-width: 768px) {
-    .contact img {
+    .contact-img {
         display: none;
     }
 
@@ -72,6 +72,6 @@ input {
         flex-direction: column;
     }
     .title-contact {
-        font-size: 36px;
+        font-size: 32px;
     }
 }

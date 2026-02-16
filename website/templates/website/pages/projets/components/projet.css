@@ -8,6 +8,7 @@
     align-items: stretch;
     height: 200px;
     gap: 8px;
+    width: 35%;
 }
 
 .line-projet {
@@ -36,4 +37,9 @@
 
 .projet.orange {
     color: var(--secondary-100);
+}
+@media (max-width: 768px) {
+    .projet {
+        width: 100%;
+    }
 }

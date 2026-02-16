@@ -2,55 +2,102 @@ version: "3.9"
 
 services:
     traefik:
-        image: traefik:v2.10
+        image: traefik:v3.0
         container_name: traefik
         restart: unless-stopped
+
         command:
-            # Mode de configuration
+            # Providers
             - "--providers.docker=true"
             - "--providers.docker.exposedbydefault=false"
-            # Points d'entrée
+
+            # Entrypoints
             - "--entrypoints.web.address=:80"
             - "--entrypoints.websecure.address=:443"
-            # Let's Encrypt pour SSL automatique
+
+            # Redirection HTTP → HTTPS
+            - "--entrypoints.web.http.redirections.entrypoint.to=websecure"
+            - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+
+            # Let's Encrypt
             - "--certificatesresolvers.letsencrypt.acme.tlschallenge=true"
-            - "--certificatesresolvers.letsencrypt.acme.email=christianemataix@gmail.com"
+            - "--certificatesresolvers.letsencrypt.acme.email=TON_EMAIL_ICI"
             - "--certificatesresolvers.letsencrypt.acme.storage=/letsencrypt/acme.json"
-            # Redirection HTTP vers HTTPS
-            - "--entrypoints.web.http.redirections.entryPoint.to=websecure"
-            - "--entrypoints.web.http.redirections.entryPoint.scheme=https"
+
+            # Logs
+            - "--log.level=INFO"
+            - "--accesslog=true"
+
+            # Sécurité
+            - "--api.dashboard=false"
+
         ports:
             - "80:80"
             - "443:443"
+
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
             - ./letsencrypt:/letsencrypt
+
         networks:
             - web
 
+        security_opt:
+            - no-new-privileges:true
+
     web:
-        build: .
+        build:
+            context: .
+            dockerfile: Dockerfile
         container_name: django_web
         restart: unless-stopped
+
         env_file:
             - .env
-        volumes:
-            - .:/app
-        command: gunicorn core.wsgi:application --bind 0.0.0.0:8000
+
+        command: >
+            gunicorn core.wsgi:application
+            --bind 0.0.0.0:8000
+            --workers 3
+            --threads 2
+            --timeout 30
+
         labels:
-            # Activer Traefik pour ce service
             - "traefik.enable=true"
-            # Définir le nom de domaine (À MODIFIER)
-            - "traefik.http.routers.django.rule=Host(`christianemataixdanse.fr`) || Host(`www.christianemataixdanse.fr`)"
-            # Utiliser HTTPS
+
+            # Domaine
+            - "traefik.http.routers.django.rule=Host(`tondomaine.fr`) || Host(`www.tondomaine.fr`)"
             - "traefik.http.routers.django.entrypoints=websecure"
             - "traefik.http.routers.django.tls.certresolver=letsencrypt"
-            # Port du service
+
+            # Middlewares sécurité
+            - "traefik.http.middlewares.security.headers.stsSeconds=31536000"
+            - "traefik.http.middlewares.security.headers.stsIncludeSubdomains=true"
+            - "traefik.http.middlewares.security.headers.stsPreload=true"
+            - "traefik.http.middlewares.security.headers.browserXssFilter=true"
+            - "traefik.http.middlewares.security.headers.contentTypeNosniff=true"
+            - "traefik.http.middlewares.security.headers.frameDeny=true"
+
+            # Rate limiting
+            - "traefik.http.middlewares.ratelimit.ratelimit.average=100"
+            - "traefik.http.middlewares.ratelimit.ratelimit.burst=50"
+
+            # Activation middlewares
+            - "traefik.http.routers.django.middlewares=security@docker,ratelimit@docker"
+
+            # Port interne
             - "traefik.http.services.django.loadbalancer.server.port=8000"
+
         networks:
             - web
-        depends_on:
-            - traefik
+
+        security_opt:
+            - no-new-privileges:true
+
+        read_only: true
+
+        tmpfs:
+            - /tmp
 
 networks:
     web:
