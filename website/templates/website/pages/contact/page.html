@@ -1,7 +1,7 @@
 {% extends 'website/layout/landing.html' %}
 {% load static %}
 {% block head_title %}Contacter{% endblock %}
-{% block head_description %}cc{% endblock %}`
+{% block head_description %}Contacter{% endblock %}
 
         {% block extra_head_tags %}
      <link rel="stylesheet" href="{% static 'website/pages/contact/page.css' %}">
@@ -15,6 +15,7 @@
 			<p>Crédit Thomas Nobis</p>
 		</div>
 		<form action="https://formspree.io/f/xdalnvbk" method="POST">
+			{% csrf_token %}
 			<h1 class="title-contact">Me contacter</h1>
 			<div class="contact-name">
 				<div class="contact-name-col">
