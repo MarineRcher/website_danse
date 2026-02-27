@@ -7,6 +7,7 @@
     padding: 16px;
     align-items: stretch;
     height: 200px;
+    width: 35%;
     gap: 8px;
 }
 
@@ -42,6 +43,6 @@
 
 @media (max-width: 768px) {
     .review {
-        height: 270px;
+        width: 100%;
     }
 }

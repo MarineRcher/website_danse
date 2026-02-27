@@ -13,7 +13,10 @@
     height: 542px;
     padding-right: 64px;
 }
-
+.contact-img {
+    display: flex;
+    flex-direction: column;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -56,7 +59,7 @@ input {
 }
 
 @media (max-width: 768px) {
-    .contact img {
+    .contact-img {
         display: none;
     }
 
@@ -68,7 +71,6 @@ input {
     .contact-name {
         flex-direction: column;
     }
-
     .title-contact {
         font-size: 32px;
     }
