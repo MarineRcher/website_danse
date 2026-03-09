@@ -75,6 +75,7 @@ services:
             - "traefik.http.middlewares.security.headers.browserXssFilter=true"
             - "traefik.http.middlewares.security.headers.contentTypeNosniff=true"
             - "traefik.http.middlewares.security.headers.frameDeny=true"
+            - "traefik.http.middlewares.proto.headers.customrequestheaders.X-Forwarded-Proto=https"
 
             # Rate limiting
             - "traefik.http.middlewares.ratelimit.ratelimit.average=100"
