@@ -81,7 +81,7 @@ services:
             - "traefik.http.middlewares.ratelimit.ratelimit.burst=50"
 
             # Activation middlewares
-            - "traefik.http.routers.django.middlewares=security@docker,ratelimit@docker"
+            - "traefik.http.routers.django.middlewares=security@docker,ratelimit@docker,proto@docker"
 
             # Port interne
             - "traefik.http.services.django.loadbalancer.server.port=8000"
