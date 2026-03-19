@@ -1,4 +1,8 @@
+User-agent: Googlebot
+Allow: /
+
 User-agent: *
 Allow: /
+Crawl-delay: 10
 
 Sitemap: https://christianemataixdanse.fr/sitemap.xml

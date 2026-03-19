@@ -63,12 +63,24 @@ services:
         labels:
             - "traefik.enable=true"
 
-            # Domaine
-            - "traefik.http.routers.django.rule=Host(`christianemataixdanse.fr`) || Host(`www.christianemataixdanse.fr`)"
+            # ✅ Routeur principal (sans www uniquement)
+            - "traefik.http.routers.django.rule=Host(`christianemataixdanse.fr`)"
             - "traefik.http.routers.django.entrypoints=websecure"
             - "traefik.http.routers.django.tls.certresolver=letsencrypt"
+            - "traefik.http.routers.django.middlewares=security@docker,ratelimit@docker,proto@docker"
 
-            # Middlewares sécurité
+            # ✅ Routeur www → redirige vers non-www
+            - "traefik.http.routers.django-www.rule=Host(`www.christianemataixdanse.fr`)"
+            - "traefik.http.routers.django-www.entrypoints=websecure"
+            - "traefik.http.routers.django-www.tls.certresolver=letsencrypt"
+            - "traefik.http.routers.django-www.middlewares=redirect-www@docker"
+
+            # ✅ Middleware de redirection 301
+            - "traefik.http.middlewares.redirect-www.redirectregex.regex=^https://www\\.christianemataixdanse\\.fr/(.*)"
+            - "traefik.http.middlewares.redirect-www.redirectregex.replacement=https://christianemataixdanse.fr/$${1}"
+            - "traefik.http.middlewares.redirect-www.redirectregex.permanent=true"
+
+            # Middlewares sécurité (inchangés)
             - "traefik.http.middlewares.security.headers.stsSeconds=31536000"
             - "traefik.http.middlewares.security.headers.stsIncludeSubdomains=true"
             - "traefik.http.middlewares.security.headers.stsPreload=true"
@@ -80,9 +92,6 @@ services:
             # Rate limiting
             - "traefik.http.middlewares.ratelimit.ratelimit.average=100"
             - "traefik.http.middlewares.ratelimit.ratelimit.burst=50"
-
-            # Activation middlewares
-            - "traefik.http.routers.django.middlewares=security@docker,ratelimit@docker,proto@docker"
 
             # Port interne
             - "traefik.http.services.django.loadbalancer.server.port=8000"
