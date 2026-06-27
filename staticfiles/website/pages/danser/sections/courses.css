@@ -13,12 +13,14 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .courses-details {
     display: flex;
     flex-direction: column;
-    min-width: 40%;
+    max-width: 64%;
     gap: 8px;
 }
 
@@ -35,6 +37,12 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.courses-details-tarifs-col {
+    display: flex;
+    flex-direction: column;
+}
+
 .title-danser {
     padding-top: 64px;
 }
@@ -79,10 +87,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 4px;
-    }
-
-    .line {
-        width: 48px;
     }
 
     .courses-details-tarifs {
